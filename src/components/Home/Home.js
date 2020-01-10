@@ -6,30 +6,41 @@ import employeesData from '../../helpers/data/employeesData';
 import DogPen from '../DogPen/DogPen';
 import StaffRoom from '../StaffRoom/StaffRoom';
 
-class App extends React.Component {
+class Home extends React.Component {
   state = {
     doggos: [],
     minions: [],
   }
 
   componentDidMount() {
-    const doggos = dogsData.getAllDogs();
-    const minions = employeesData.getAllEmployees();
-    this.setState({ doggos, minions });
+    this.getDogs();
+    this.getEmployees();
+  }
+
+  getDogs = () => {
+    dogsData.getAllDogs()
+      .then((doggos) => {
+        this.setState({ doggos });
+      })
+      .catch((errFromHome) => console.error({ errFromHome }));
+  }
+
+  getEmployees = () => {
+    employeesData.getAllEmployees()
+      .then((minions) => {
+        this.setState({ minions });
+      })
+      .catch((errFromHome) => console.error({ errFromHome }));
   }
 
   render() {
     return (
-      <div className="App">
-        <div className="app-container">
-          <div className="Home">
-            <DogPen className="parent-component DogPen" doggos={this.state.doggos}/>
-            <StaffRoom className="parent-component StaffRoom" minions={this.state.minions}/>
-          </div>
-        </div>
+      <div className="Home">
+        <DogPen className="parent-component DogPen" doggos={this.state.doggos}/>
+        <StaffRoom className="parent-component StaffRoom" minions={this.state.minions}/>
       </div>
     );
   }
 }
 
-export default App;
+export default Home;

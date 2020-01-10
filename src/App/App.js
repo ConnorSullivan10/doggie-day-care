@@ -1,33 +1,52 @@
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import React from 'react';
-// import './App.scss';
-// import dogsData from '../helpers/data/dogsData';
-// import employeesData from '../helpers/data/employeesData';
-// import DogPen from '../components/DogPen/DogPen';
-// import StaffRoom from '../components/StaffRoom/StaffRoom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+import firebase from 'firebase/app';
+import firebaseConnection from '../helpers/data/connection';
+import Auth from '../components/Auth/Auth';
+import MyNavbar from '../components/MyNavbar/MyNavbar';
+import Home from '../components/Home/Home';
+import './App.scss';
 
-// class App extends React.Component {
-//   state = {
-//     doggos: [],
-//     minions: [],
-//   }
+firebaseConnection();
 
-//   componentDidMount() {
-//     const doggos = dogsData.getAllDogs();
-//     const minions = employeesData.getAllEmployees();
-//     this.setState({ doggos, minions });
-//   }
+class App extends React.Component {
+  state = {
+    authed: false,
+  }
 
-//   render() {
-//     return (
-//       <div className="App">
-//         <div className="app-container">
-//           <DogPen className="parent-component DogPen" doggos={this.state.doggos}/>
-//           <StaffRoom className="parent-component StaffRoom" minions={this.state.minions}/>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
+  componentDidMount() {
+    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ authed: true });
+      } else {
+        this.setState({ authed: false });
+      }
+    });
+  }
 
-// export default App;
+  componentWillUnmount() {
+    this.removeListener();
+  }
+
+  renderView = () => {
+    const { authed } = this.state;
+    if (!authed) {
+      return (<Auth />);
+    }
+    return (<Home />);
+  }
+
+  render() {
+    const { authed } = this.state;
+    return (
+      <div className="App">
+        <div className="app-container">
+          <MyNavbar authed={authed} />
+          { this.renderView() }
+        </div>
+      </div>
+    );
+  }
+}
+
+export default App;
