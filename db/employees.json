@@ -1,0 +1,62 @@
+{
+  "employee1" : {
+    "firstName": "Francis",
+    "lastName": "Beacon",
+    "phoneNumber": "174-389-6055"
+  },
+  "employee2" : {
+    "firstName": "Taylor",
+    "lastName": "Harness",
+    "phoneNumber": "403-558-2253"
+  },
+  "employee3" : {
+    "firstName": "Emma",
+    "lastName": "Fisher",
+    "phoneNumber": "660-373-9938"
+  },
+  "employee4" : {
+    "firstName": "Sharniece",
+    "lastName": "Daley",
+    "phoneNumber": "049-693-1542"
+  },
+  "employee5" : {
+    "firstName": "Eustice",
+    "lastName": "Robinson",
+    "phoneNumber": "559-305-4493"
+  },
+  "employee6" : {
+    "firstName": "Thurston",
+    "lastName": "Reynolds",
+    "phoneNumber": "890-335-8903"
+  },
+  "employee7" : {
+    "firstName": "Pappy",
+    "lastName": "McPawpaw",
+    "phoneNumber": "230-978-6512"
+  },
+  "employee8" : {
+    "firstName": "Jimbo",
+    "lastName": "Riley",
+    "phoneNumber": "162-357-5920"
+  },
+  "employee9" : {
+    "firstName": "Margaret",
+    "lastName": "Barnabee",
+    "phoneNumber": "234-874-8690"
+  },
+  "employee10" : {
+    "firstName": "Flash",
+    "lastName": "Jackson",
+    "phoneNumber": "927-609-2340"
+  },
+  "employee11" : {
+    "firstName": "Cash",
+    "lastName": "Landry",
+    "phoneNumber": "590-278-5626"
+  },
+  "employee12" : {
+    "firstName": "Jarvis",
+    "lastName": "Harrelson",
+    "phoneNumber": "587-092-4967"
+  }
+}
