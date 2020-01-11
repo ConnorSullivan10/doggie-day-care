@@ -22,6 +22,9 @@ const getAllDogs = () => new Promise((resolve, reject) => {
     });
 });
 
+const getSingleDog = (dogId) => axios.get(`${baseUrl}/dogs/${dogId}.json`);
+
 export default {
   getAllDogs,
+  getSingleDog,
 };

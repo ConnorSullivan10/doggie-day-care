@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Employee from '../Employee/Employee';
 import employeeShape from '../../helpers/props/employeeShape';
+import './StaffRoom.scss';
 
 class StaffRoom extends React.Component {
   static propTypes = {

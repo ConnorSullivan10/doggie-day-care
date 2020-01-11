@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import dogShape from '../../helpers/props/dogShape';
+import './Dog.scss';
 
 class Dog extends React.Component {
   static propTypes = {
-    doggos: dogShape.dogShape,
+    doggos: PropTypes.arrayOf(dogShape.dogShape),
   }
 
   render() {

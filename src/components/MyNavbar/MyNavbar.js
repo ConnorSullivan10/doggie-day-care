@@ -21,7 +21,7 @@ class MyNavbar extends React.Component {
       <div className="MyNavbar">
         <nav className="navbar navbar-expand-lg navbar-dark">
           <span className="navbar-brand" href="#">
-            <img className="nav-logo" src="https://www.nflalumni.org/wp-content/uploads/2017/10/Tennessee_Titans_logo.svg_.png" alt=""/>
+            <img className="nav-logo" src="https://mpng.pngfly.com/20180605/qir/kisspng-dog-paw-footprint-patas-5b16a2c64b3bf3.9560859815282101183082.jpg" alt=""/>
           </span>
           <span className="navbar-brand nav-text" href="#">Scrappy's Super Squad</span>
           <button className="navbar-toggler" type="button"

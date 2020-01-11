@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import employeeShape from '../../helpers/props/employeeShape';
 
 class Employee extends React.Component {
   static propTypes = {
-    minions: employeeShape.employeeShape,
+    minions: PropTypes.arrayOf(employeeShape.employeeShape),
   }
 
   render() {
