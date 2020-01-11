@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import employeesData from '../../helpers/data/employeesData';
 import dogsData from '../../helpers/data/dogsData';
 import walkShape from '../../helpers/props/walkShape';
