@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import employeesData from '../../helpers/data/employeesData';
 import dogsData from '../../helpers/data/dogsData';
 import walkShape from '../../helpers/props/walkShape';
@@ -7,6 +8,7 @@ import './Walk.scss';
 class Walk extends React.Component {
   static propTypes = {
     walk: walkShape.walkShape,
+    deleteWalk: PropTypes.func,
   }
 
   state = {
@@ -33,6 +35,12 @@ class Walk extends React.Component {
       .catch((errFromSingleMinion) => console.error(errFromSingleMinion));
   }
 
+  deleteWalkEvent = (e) => {
+    e.preventDefault();
+    const { deleteWalk, walk } = this.props;
+    deleteWalk(walk.id);
+  }
+
   componentDidMount() {
     this.singleDoggo();
     this.singleMinion();
@@ -43,15 +51,16 @@ class Walk extends React.Component {
     const { firstName, lastName, dogName } = this.state;
     return (
        <div className="walks col-4">
-           <div className="card" id={walk.id}>
-              <div className="card-body">
-                 <div className="card-header d-flex flex-row">
-                    <p className="card-title">Walker: {firstName} {lastName}</p>
-                    <p className="card-title">Dog: {dogName}</p>
-                    <p className="card-title">Date: {walk.date}</p>
-                 </div>
+          <div className="card" id={walk.id}>
+            <div className="card-body">
+              <div className="card-header d-flex flex-row">
+                <button className="btn btn-danger delete-walk" onClick={this.deleteWalkEvent}>X</button>
+                <p className="card-title">Walker: {firstName} {lastName}</p>
+                <p className="card-title">Dog: {dogName}</p>
+                <p className="card-title">Date: {walk.date}</p>
               </div>
             </div>
+          </div>
         </div>
     );
   }

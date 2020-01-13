@@ -8,11 +8,12 @@ import './WalkSquad.scss';
 class WalkSquad extends React.Component {
     static propTypes = {
       walks: PropTypes.arrayOf(walkShape.walkShape),
+      deleteWalk: PropTypes.func,
     }
 
     render() {
-      const { walks } = this.props;
-      const walkCards = walks.map((walk) => (<Walk key={walk.id} walk={walk} />));
+      const { walks, deleteWalk } = this.props;
+      const walkCards = walks.map((walk) => (<Walk key={walk.id} walk={walk} deleteWalk={deleteWalk}/>));
       return (
       <div className="WalkSquad">
         <div className="walkSquadHeader">

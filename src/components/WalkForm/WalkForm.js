@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import walkShape from '../../helpers/props/walkShape';
+import walkShape from '../../helpers/props/walkShape';
 import employeeShape from '../../helpers/props/employeeShape';
 import dogShape from '../../helpers/props/dogShape';
 import './WalkForm.scss';
@@ -11,12 +11,22 @@ class WalkForm extends React.Component {
     doggos: PropTypes.arrayOf(dogShape.dogShape),
     addWalk: PropTypes.func,
     setHideWalkForm: PropTypes.func,
+    editMode: PropTypes.bool,
+    walkToEdit: walkShape.walkShape,
+    updateWalk: PropTypes.func,
   }
 
   state = {
     employeeName: '',
     dogName: '',
     date: '',
+  }
+
+  componentDidMount() {
+    const { walkToEdit, editMode } = this.props;
+    if (editMode) {
+      this.setState({ employeeName: walkToEdit.employeeId, dogName: walkToEdit.dogId, date:walkToEdit.date });
+    }
   }
 
   saveWalkEvent = (e) => {
@@ -44,6 +54,17 @@ class WalkForm extends React.Component {
   dateChange = (e) => {
     e.preventDefault();
     this.setState({ date: e.target.value });
+  }
+
+  updateWalkEvent = (e) => {
+    e.preventDefault();
+    const { updateWalk, walkToEdit } = this.props;
+    const updatedWalk = {
+      employeeId: this.state.employeeName,
+      dogId: this.state.dogName,
+      date: this.state.date,
+    };
+    updateWalk(walkToEdit.id, updatedWalk);
   }
 
   render() {
@@ -81,7 +102,9 @@ class WalkForm extends React.Component {
     <input type="date" id="date" value={date} onChange={this.dateChange}/>
     </div>
     {
-    <button onClick={this.saveWalkEvent} className="btn btn-secondary">Save Walk</button>
+      (editMode) ? (<button onClick={this.updateWalkEvent} className="btn btn-secondary">Update Walk</button>) 
+      : (<button onClick={this.saveWalkEvent} className="btn btn-secondary">Save Walk</button>)
+    
     }
     </form>
     );

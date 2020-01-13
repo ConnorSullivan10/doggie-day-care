@@ -16,6 +16,8 @@ class Home extends React.Component {
     minions: [],
     walks: [],
     showWalkForm: false,
+    editMode: false,
+    walkToEdit: {},
   }
 
   componentDidMount() {
@@ -57,6 +59,22 @@ class Home extends React.Component {
       .catch((errFromAddWalk) => console.error({ errFromAddWalk }));
   }
 
+  deleteWalk = (walkId) => {
+    walksData.deleteWalk(walkId)
+      .then(() => {
+        this.getWalks();
+      })
+      .catch((errFromDeleteWalk) => console.error(errFromDeleteWalk));
+  }
+
+  updateWalk = (walkId, updatedWalk) => {
+    walksData.updateWalk(walkId, updatedWalk)
+      .then(() => {
+        this.getWalks();
+        this.setState({ editMode: false, showWalkForm: false });
+      });
+  }
+
   setShowWalkForm = () => {
     this.setState({ showWalkForm: true });
   }
@@ -65,13 +83,21 @@ class Home extends React.Component {
     this.setState({ showWalkForm: false });
   }
 
+  setEditMode = (editMode) => {
+    this.setState({ editMode, showWalkForm: true });
+  }
+
+  setWalkToEdit = (walk) => {
+    this.setState({ walkToEdit: walk });
+  }
+
   render() {
-    const { walks, doggos, minions } = this.state;
+    const { walks, doggos, minions, editMode, walkToEdit } = this.state;
     return (
       <div className="Home">
         <button className="addWalk" onClick={this.setShowWalkForm}>Create New Walk</button>
-          { this.state.showWalkForm && <WalkForm addWalk={this.addWalk} setHideWalkForm={this.setHideWalkForm} doggos={doggos} minions={minions}/> }
-        <WalkSquad className="parent-component WalkSquad" walks={walks} getWalks={this.getWalks}/>
+        { this.state.showWalkForm && <WalkForm addWalk={this.addWalk} setHideWalkForm={this.setHideWalkForm} doggos={doggos} minions={minions} editMode={editMode} walkToEdit={walkToEdit} updateWalk={this.updateWalk}/> }
+        <WalkSquad className="parent-component WalkSquad" walks={walks} getWalks={this.getWalks} deleteWalk={this.deleteWalk} setEditMode={this.setEditMode} setWalkToEdit={this.setWalkToEdit}/>
         <DogPen className="parent-component DogPen" doggos={doggos}/>
         <StaffRoom className="parent-component StaffRoom" minions={minions}/>
       </div>
@@ -80,3 +106,4 @@ class Home extends React.Component {
 }
 
 export default Home;
+
