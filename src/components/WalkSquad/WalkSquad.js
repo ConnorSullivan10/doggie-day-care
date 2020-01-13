@@ -9,11 +9,15 @@ class WalkSquad extends React.Component {
     static propTypes = {
       walks: PropTypes.arrayOf(walkShape.walkShape),
       deleteWalk: PropTypes.func,
+      setEditMode: PropTypes.func,
+      setWalkToEdit: PropTypes.func,
     }
 
     render() {
-      const { walks, deleteWalk } = this.props;
-      const walkCards = walks.map((walk) => (<Walk key={walk.id} walk={walk} deleteWalk={deleteWalk}/>));
+      const {
+        walks, deleteWalk, setEditMode, setWalkToEdit,
+      } = this.props;
+      const walkCards = walks.map((walk) => (<Walk key={walk.id} walk={walk} deleteWalk={deleteWalk} setEditMode={setEditMode} setWalkToEdit={setWalkToEdit}/>));
       return (
       <div className="WalkSquad">
         <div className="walkSquadHeader">

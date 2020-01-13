@@ -92,7 +92,9 @@ class Home extends React.Component {
   }
 
   render() {
-    const { walks, doggos, minions, editMode, walkToEdit } = this.state;
+    const {
+      walks, doggos, minions, editMode, walkToEdit,
+    } = this.state;
     return (
       <div className="Home">
         <button className="addWalk" onClick={this.setShowWalkForm}>Create New Walk</button>
@@ -106,4 +108,3 @@ class Home extends React.Component {
 }
 
 export default Home;
-

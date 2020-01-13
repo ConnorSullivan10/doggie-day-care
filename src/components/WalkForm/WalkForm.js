@@ -25,9 +25,15 @@ class WalkForm extends React.Component {
   componentDidMount() {
     const { walkToEdit, editMode } = this.props;
     if (editMode) {
-      this.setState({ employeeName: walkToEdit.employeeId, dogName: walkToEdit.dogId, date:walkToEdit.date });
+      this.setState({ employeeName: walkToEdit.employeeId, dogName: walkToEdit.dogId, date: walkToEdit.date });
     }
   }
+
+  // componentDidUpdate(prevProps) {
+  //   if ((prevProps.walkToEdit.id !== this.props.walkToEdit.id) && this.props.editMode) {
+  //     this.setState({ employeeName: this.props.walkToEdit.employeeId, dogName: this.props.walkToEdit.dogId, date: this.props.walkToEdit.date });
+  //   }
+  // }
 
   saveWalkEvent = (e) => {
     const { addWalk } = this.props;
@@ -69,7 +75,7 @@ class WalkForm extends React.Component {
 
   render() {
     const { employeeName, dogName, date } = this.state;
-    const { doggos, minions } = this.props;
+    const { doggos, minions, editMode } = this.props;
 
     return (<form className="col-6 offset-3 WalkForm">
       <button className="btn btn-danger hide-form" onClick={this.props.setHideWalkForm}>X</button>
@@ -102,9 +108,8 @@ class WalkForm extends React.Component {
     <input type="date" id="date" value={date} onChange={this.dateChange}/>
     </div>
     {
-      (editMode) ? (<button onClick={this.updateWalkEvent} className="btn btn-secondary">Update Walk</button>) 
-      : (<button onClick={this.saveWalkEvent} className="btn btn-secondary">Save Walk</button>)
-    
+      (editMode) ? (<button onClick={this.updateWalkEvent} className="btn btn-secondary">Update Walk</button>)
+        : (<button onClick={this.saveWalkEvent} className="btn btn-secondary">Save Walk</button>)
     }
     </form>
     );
