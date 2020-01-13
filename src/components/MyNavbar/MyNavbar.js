@@ -21,9 +21,9 @@ class MyNavbar extends React.Component {
       <div className="MyNavbar">
         <nav className="navbar navbar-expand-lg navbar-dark">
           <span className="navbar-brand" href="#">
-            <img className="nav-logo" src="https://mpng.pngfly.com/20180605/qir/kisspng-dog-paw-footprint-patas-5b16a2c64b3bf3.9560859815282101183082.jpg" alt=""/>
+            <img className="nav-logo" src="https://images.vexels.com/media/users/3/142912/isolated/preview/4e17695e6ff43707fa6f1078c24d99c8-black-dog-animal-logo-by-vexels.png" alt=""/>
           </span>
-          <span className="navbar-brand nav-text" href="#">Scrappy's Super Squad</span>
+          <span className="navbar-brand nav-text navTitle" href="#">Scrappy's Super Squad</span>
           <button className="navbar-toggler" type="button"
             data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>

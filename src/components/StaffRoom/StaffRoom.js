@@ -17,7 +17,7 @@ class StaffRoom extends React.Component {
         <div className="staffRoomHeader">
           <h1 className="text-center staffRoomtitle">Staff Room</h1>
         </div>
-        <div className="card staffRoom-section d-flex flex-wrap">
+        <div className="staffRoom-section d-flex flex-wrap">
           {employeeCards}
         </div>
       </div>
