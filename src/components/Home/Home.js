@@ -7,7 +7,6 @@ import walksData from '../../helpers/data/walksData';
 import WalkSquad from '../WalkSquad/WalkSquad';
 import DogPen from '../DogPen/DogPen';
 import StaffRoom from '../StaffRoom/StaffRoom';
-import WalkForm from '../WalkForm/WalkForm';
 
 
 class Home extends React.Component {
@@ -15,9 +14,6 @@ class Home extends React.Component {
     doggos: [],
     minions: [],
     walks: [],
-    showWalkForm: false,
-    editMode: false,
-    walkToEdit: {},
   }
 
   componentDidMount() {
@@ -50,15 +46,6 @@ class Home extends React.Component {
       .catch((errFromHome) => console.error({ errFromHome }));
   }
 
-  addWalk = (newWalk) => {
-    walksData.saveNewWalk(newWalk)
-      .then(() => {
-        this.getWalks();
-        this.setState({ showWalkForm: false });
-      })
-      .catch((errFromAddWalk) => console.error({ errFromAddWalk }));
-  }
-
   deleteWalk = (walkId) => {
     walksData.deleteWalk(walkId)
       .then(() => {
@@ -67,39 +54,15 @@ class Home extends React.Component {
       .catch((errFromDeleteWalk) => console.error(errFromDeleteWalk));
   }
 
-  updateWalk = (walkId, updatedWalk) => {
-    walksData.updateWalk(walkId, updatedWalk)
-      .then(() => {
-        this.getWalks();
-        this.setState({ editMode: false, showWalkForm: false });
-      });
-  }
-
-  setShowWalkForm = () => {
-    this.setState({ showWalkForm: true });
-  }
-
-  setHideWalkForm = () => {
-    this.setState({ showWalkForm: false });
-  }
-
-  setEditMode = (editMode) => {
-    this.setState({ editMode, showWalkForm: true });
-  }
-
-  setWalkToEdit = (walk) => {
-    this.setState({ walkToEdit: walk });
-  }
 
   render() {
     const {
-      walks, doggos, minions, editMode, walkToEdit,
+      walks, doggos, minions,
     } = this.state;
     return (
       <div className="Home">
-        <button className="addWalk" onClick={this.setShowWalkForm}>Create New Walk</button>
-        { this.state.showWalkForm && <WalkForm addWalk={this.addWalk} setHideWalkForm={this.setHideWalkForm} doggos={doggos} minions={minions} editMode={editMode} walkToEdit={walkToEdit} updateWalk={this.updateWalk}/> }
-        <WalkSquad className="parent-component WalkSquad" walks={walks} getWalks={this.getWalks} deleteWalk={this.deleteWalk} setEditMode={this.setEditMode} setWalkToEdit={this.setWalkToEdit}/>
+        <WalkSquad className="parent-component WalkSquad" walks={walks} doggos={doggos} minions={minions}
+        getWalks={this.getWalks} deleteWalk={this.deleteWalk}/>
         <DogPen className="parent-component DogPen" doggos={doggos}/>
         <StaffRoom className="parent-component StaffRoom" minions={minions}/>
       </div>

@@ -67,7 +67,7 @@ class Walk extends React.Component {
           <div className="card" id={walk.id}>
             <div className="card-body">
               <div className="card-header d-flex flex-row">
-                <button className="btn btn-warning edit-walk" onClick={this.setEditPlayerEvent}>Edit</button>
+                <button className="btn btn-warning edit-walk" onClick={this.setEditWalkEvent}>Edit</button>
                 <button className="btn btn-danger delete-walk" onClick={this.deleteWalkEvent}>X</button>
               </div>
               <p className="card-title">Walker: {firstName} {lastName}</p>
