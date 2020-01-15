@@ -16,7 +16,7 @@ class DogPen extends React.Component {
         <div className="dogPenHeader">
           <h1 className="text-center dogPenTitle">Dog Pen</h1>
         </div>
-        <div className="card dogPen-section d-flex flex-wrap">
+        <div className="dogPen-section d-flex flex-wrap">
           {dogCards}
         </div>
       </div>

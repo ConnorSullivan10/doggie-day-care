@@ -1,0 +1,33 @@
+.walks {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.card-header {
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 1%;
+  
+  .edit-walk {
+    margin-left: 0;
+    margin-right: auto;
+    max-height: 35px;
+    max-width: 53px;
+  }
+  
+  .delete-walk{
+    margin-right: 0;
+    margin-left: auto;
+    max-height: 35px;
+    max-width: 35px;
+  }
+  
+}
+
+.card-title {
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}

@@ -46,12 +46,25 @@ class Home extends React.Component {
       .catch((errFromHome) => console.error({ errFromHome }));
   }
 
+  deleteWalk = (walkId) => {
+    walksData.deleteWalk(walkId)
+      .then(() => {
+        this.getWalks();
+      })
+      .catch((errFromDeleteWalk) => console.error(errFromDeleteWalk));
+  }
+
+
   render() {
+    const {
+      walks, doggos, minions,
+    } = this.state;
     return (
       <div className="Home">
-        <WalkSquad className="parent-component WalkSquad" walks={this.state.walks}/>
-        <DogPen className="parent-component DogPen" doggos={this.state.doggos}/>
-        <StaffRoom className="parent-component StaffRoom" minions={this.state.minions}/>
+        <WalkSquad className="parent-component WalkSquad" walks={walks} doggos={doggos} minions={minions}
+        getWalks={this.getWalks} deleteWalk={this.deleteWalk}/>
+        <DogPen className="parent-component DogPen" doggos={doggos}/>
+        <StaffRoom className="parent-component StaffRoom" minions={minions}/>
       </div>
     );
   }
