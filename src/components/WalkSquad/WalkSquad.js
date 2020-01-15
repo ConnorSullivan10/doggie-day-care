@@ -36,7 +36,7 @@ class WalkSquad extends React.Component {
     updateWalk = (walkId, updatedWalk) => {
       walksData.updateWalk(walkId, updatedWalk)
         .then(() => {
-          this.getWalks();
+          this.props.getWalks();
           this.setState({ editMode: false, showWalkForm: false });
         });
     }

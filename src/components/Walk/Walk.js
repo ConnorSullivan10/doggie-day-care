@@ -47,7 +47,7 @@ class Walk extends React.Component {
     deleteWalk(walk.id);
   }
 
-  setEditWalkevent = (e) => {
+  setEditWalkEvent = (e) => {
     const { setEditMode, setWalkToEdit, walk } = this.props;
     e.preventDefault();
     setEditMode(true);
