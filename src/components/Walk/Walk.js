@@ -63,16 +63,14 @@ class Walk extends React.Component {
     const { walk } = this.props;
     const { firstName, lastName, dogName } = this.state;
     return (
-       <div className="walks col-4">
-          <div className="card" id={walk.id}>
-            <div className="card-body">
-              <div className="card-header d-flex flex-row">
-                <button className="btn btn-warning edit-walk" onClick={this.setEditWalkEvent}>Edit</button>
-                <button className="btn btn-danger delete-walk" onClick={this.deleteWalkEvent}>X</button>
-              </div>
-              <p className="card-title">Walker: {firstName} {lastName}</p>
-              <p className="card-title">Dog: {dogName}</p>
-              <p className="card-title">Date: {walk.date}</p>
+       <div className="walks col-4 d-flex">
+          <div className="card walkCard" id={walk.id}>
+            <div className="card-body walkBody">
+              <button className="btn btn-success edit-walk" onClick={this.setEditWalkEvent}>Edit</button>
+              <button className="btn btn-danger delete-walk" onClick={this.deleteWalkEvent}>X</button>
+              <p className="card-text">Walker: {firstName} {lastName}</p>
+              <p className="card-text">Dog: {dogName}</p>
+              <p className="card-text">Date: {walk.date}</p>
             </div>
           </div>
         </div>

@@ -1,3 +1,29 @@
+# Doggie Day Care
+
+## Technologies Used
+1. HTML5, SCSS, JavaScript
+2. Bootstrap & SASS 0.5.0: All customized styling
+3. React: For bundling components and building the UI
+
+## Description
+Use this application to log in as an employee of Scrappy's Walking Crew. Upon loggin in, you'll be able to view the information about the dogs and employees at the day care, as well as create, read, update, and delete Dog Walk Appointments at your leisure.
+
+## Screenshots
+
+![Doggie Day Care Preview]()
+![Doggie Day Care Preview]()
+![Doggie Day Care Preview]()
+
+
+## How to run
+1. Clone down this project.
+2. Go to: `https://www.npmjs.com/package/http-server` and install "http-server".  
+2. Navigate to the project folder in command line interface and type: `http-server -p 8888`  
+3. This will show at: `http://localhost:8888` in your internet browser.  
+
+Or you can launch your web browser and navigate to the following deployed link of the project:
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

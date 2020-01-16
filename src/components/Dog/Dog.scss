@@ -1,8 +1,48 @@
+@import '../../styles//variables';
+
 .card {
   flex-direction: row !important;
   padding: 1em;
+  -webkit-box-shadow: 2px 2px 23px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 23px -3px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 23px -3px rgba(0,0,0,0.75);
+}
+
+.btn {
+-webkit-box-shadow: 2px 2px 23px -3px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 2px 23px -3px rgba(0,0,0,0.75);
+box-shadow: 2px 2px 23px -3px rgba(0,0,0,0.75);
 }
 
 .dogs {
   max-height: 465px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  justify-content: center;
+}
+
+.dogImg {
+  width: 100%;
+}
+
+.dog-container {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://sodsolutions.com/wp-content/uploads/2018/02/Zoysia101.jpg);
+}
+
+.dogCard {
+  height: 100%;
+  width: 100%;
+  min-width: 140px;
+}
+
+p {
+  margin: 3px;
+}
+
+.dogName {
+  font-size: 1.5em;
 }
