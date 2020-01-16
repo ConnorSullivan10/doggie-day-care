@@ -1,33 +1,39 @@
 .walks {
   margin-top: 1em;
   margin-bottom: 1em;
+  justify-content: center;
 }
 
-.card-header {
-  padding-top: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 1%;
+.walkBody {
+  min-height: 96px;
+  background-image: url(https://i.pinimg.com/originals/a7/48/1f/a7481f981baae6882b21a06ab9a837a3.jpg);
+  background-position: center;
+}
   
-  .edit-walk {
-    margin-left: 0;
-    margin-right: auto;
+.edit-walk {
+    float: left;
     max-height: 35px;
     max-width: 53px;
-  }
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
   
-  .delete-walk{
-    margin-right: 0;
-    margin-left: auto;
+.delete-walk{
+    float: right;
     max-height: 35px;
     max-width: 35px;
-  }
-  
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.card-title {
-  font-size: 1em;
+.card-text {
   font-weight: bold;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.walkCard {
+  width: 300px;
+  min-width: 125px;
+  display: inline-flex;
 }

@@ -68,7 +68,7 @@ class WalkSquad extends React.Component {
         <div className="walkSquadHeader">
           <h1 className="text-center walkSquadtitle">Walks</h1>
         </div>
-        <button className="addWalk" onClick={this.setShowWalkForm}>Create New Walk</button>
+        <button className="addWalk btn btn-success card-text" onClick={this.setShowWalkForm}>Create New Walk</button>
         { this.state.showWalkForm && <WalkForm addWalk={this.addWalk} setHideWalkForm={this.setHideWalkForm} doggos={doggos} minions={minions} editMode={editMode} walkToEdit={walkToEdit} updateWalk={this.updateWalk}/> }
         <div className="walk-squad-cards d-flex flex-wrap">
           {walkCards}

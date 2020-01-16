@@ -1,0 +1,25 @@
+.employee-container {
+  background-image: url(https://www.riverbark.com/sites/default/files/photos/home-panels/Riverbark-Retreat-10-15-0561.jpg);
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.empCard {
+  height: 350px;
+  justify-content: center;
+  align-items: center;
+  min-width: 228px;
+}
+
+.empText {
+  font-size: 2em;
+}
+
+.employees {
+  padding: 1em;
+}

@@ -23,7 +23,7 @@ class MyNavbar extends React.Component {
           <span className="navbar-brand" href="#">
             <img className="nav-logo" src="https://images.vexels.com/media/users/3/142912/isolated/preview/4e17695e6ff43707fa6f1078c24d99c8-black-dog-animal-logo-by-vexels.png" alt=""/>
           </span>
-          <span className="navbar-brand nav-text navTitle" href="#">Scrappy's Super Squad</span>
+          <span className="navbar-brand nav-text navTitle card-text" href="#">Scrappy's Walking Crew</span>
           <button className="navbar-toggler" type="button"
             data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>

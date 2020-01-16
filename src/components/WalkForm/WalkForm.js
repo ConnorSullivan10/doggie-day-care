@@ -78,7 +78,7 @@ class WalkForm extends React.Component {
     const { doggos, minions, editMode } = this.props;
 
     return (<form className="col-6 offset-3 WalkForm">
-      <button className="btn btn-danger hide-form" onClick={this.props.setHideWalkForm}>X</button>
+      <button className="btn btn-danger hide-form card-text" onClick={this.props.setHideWalkForm}>X</button>
       <div className="input-group mb-3">
       <label htmlFor="dogName">Dog Name: </label>
       <select className="form-control" value={dogName} id="dogName" onChange={this.dogChange}>
