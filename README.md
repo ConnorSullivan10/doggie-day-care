@@ -10,9 +10,13 @@ Use this application to log in as an employee of Scrappy's Walking Crew. Upon lo
 
 ## Screenshots
 
-![Doggie Day Care Preview]()
-![Doggie Day Care Preview]()
-![Doggie Day Care Preview]()
+![Doggie Day Care Preview 1](https://raw.githubusercontent.com/ConnorSullivan10/doggie-day-care/master/screenshots/doggie1.PNG)
+<br>
+![Doggie Day Care Preview 2](https://raw.githubusercontent.com/ConnorSullivan10/doggie-day-care/master/screenshots/doggie5.PNG)
+<br>
+![Doggie Day Care Preview 3](https://raw.githubusercontent.com/ConnorSullivan10/doggie-day-care/master/screenshots/doggie2.PNG)
+![Doggie Day Care Preview 4](https://raw.githubusercontent.com/ConnorSullivan10/doggie-day-care/master/screenshots/doggie3.PNG)
+![Doggie Day Care Preview 5](https://raw.githubusercontent.com/ConnorSullivan10/doggie-day-care/master/screenshots/doggie4.PNG)
 
 
 ## How to run
