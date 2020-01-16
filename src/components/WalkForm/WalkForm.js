@@ -29,12 +29,6 @@ class WalkForm extends React.Component {
     }
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if ((prevProps.walkToEdit.id !== this.props.walkToEdit.id) && this.props.editMode) {
-  //     this.setState({ employeeName: this.props.walkToEdit.employeeId, dogName: this.props.walkToEdit.dogId, date: this.props.walkToEdit.date });
-  //   }
-  // }
-
   saveWalkEvent = (e) => {
     const { addWalk } = this.props;
     e.preventDefault();
