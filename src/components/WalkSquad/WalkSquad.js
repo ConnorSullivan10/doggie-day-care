@@ -38,7 +38,8 @@ class WalkSquad extends React.Component {
         .then(() => {
           this.props.getWalks();
           this.setState({ editMode: false, showWalkForm: false });
-        });
+        })
+        .catch((errFromUpdateWalk) => console.error({ errFromUpdateWalk }));
     }
 
     setWalkToEdit = (walk) => {
