@@ -26,7 +26,7 @@ Use this application to log in as an employee of Scrappy's Walking Crew. Upon lo
 3. This will show at: `http://localhost:8888` in your internet browser.  
 
 Or you can launch your web browser and navigate to the following deployed link of the project:
-
+https://doggie-day-care-ce016.firebaseapp.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
