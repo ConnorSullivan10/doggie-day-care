@@ -6,7 +6,7 @@
 3. React: For bundling components and building the UI
 
 ## Description
-Use this application to log in as an employee of Scrappy's Walking Crew. Upon loggin in, you'll be able to view the information about the dogs and employees at the day care, as well as create, read, update, and delete Dog Walk Appointments at your leisure.
+Use this application to log in as an employee of Scrappy's Walking Crew. Upon logging in, you'll be able to view the information about the dogs and employees at the day care, as well as create, read, update, and delete Dog Walk Appointments at your leisure.
 
 ## Screenshots
 
